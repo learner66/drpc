@@ -4,17 +4,20 @@
 整个client的流程是：
 **1**. RPCClient得到一个服务的代理对象
     即是CalcService服务通过RPCClient的getProxy方法得到一个代理对象，该代理对象包含了序列化和反序列化所需要的类，以及选择器等。
+
     `Proxy.newProxyInstance(ClassLoader loader,Class<?>[] interfaces,InvocationHandler h)`
     loader:用哪个类加载器去加载代理对象
     interfaces:动态代理类需要实现的接口
     handler，动态代理方法在执行时，会调用h里面的invoke方法去执行
 **2**. 在getProxy中：
+
     `(T)Proxy.newProxyInstance(this.getClass().getClassLoader(),
                  new Class[]{clazz},
                  new RemoteInvoker(clazz,encoder,decoder,selector));`
     clazz指的是CalcService的Class，
     handler指的是RemoteInvoker，RemoteInvoker中的invoke方法用来执行调用逻辑
 **3**. 在RemoteInvoker中：
+
     `public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
          Request request = new Request();
          request.setService(ServiceDescriptor.from(clazz,method));
@@ -38,6 +41,7 @@
 
 **5**. ServiceDescriptor方法中:
     ServiceDescriptor有clazz,method,returnType,parameterType属性
+    
     `public static ServiceDescriptor from(Class clazz, Method method){
        ServiceDescriptor sdp = new ServiceDescriptor();
        //设置类
@@ -65,6 +69,7 @@
        即是request实际上包括了执行的方法描述和实参，然后调用invokeRemote(request)。
 
 **7**. 在invokeRemote(request)方法中:
+
     `private Response invokeRemote(Request request) {
          Response resp = null;
          TransportClient client = null;
@@ -142,9 +147,11 @@
 
 整个server的流程是:
 **1**. 服务注册，server启动
+
     `server.register(CalcService.class,new CalcServiceImpl());
      server.start();`
 **2**. server.register是将CalcService注册到server中
+
     ` //服务注册
      public <T> void register(Class<T> interfaceClass,T bean){
          serviceManager.register(interfaceClass,bean);
