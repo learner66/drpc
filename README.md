@@ -31,8 +31,11 @@
      }
        
 **3.1**. 生成一个新的Request，包括服务描述ServiceDescriptor和参数parameters
+
 **3.2**. 设置Request中的服务实例和参数
+
 **3.3**. 调用远程方法
+
 **3.4**. 返回Resp的数据
 
 **4**. 调用add方法时会调用RemoteInvoker中的invoke方法
@@ -101,6 +104,7 @@
      }
      
 **7.1**. 在invokeRemote方法中首先选择一个选择器，并且将request请求序列化，然后将序列化后的内容写入到连接中。
+
 **7.2**. 探究selector.select()方法，首先init方法为每个服务端建立多个连接，select便是选择其中一个连接端进行数据传递。
         
     public class RandomTransportSelector implements TransportSelector
