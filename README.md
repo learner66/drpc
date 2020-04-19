@@ -32,6 +32,7 @@
         return pmethods.toArray(new Method[0]);
     }
 
+    
     /**
      * 调用指定对象的指定方法
      * @param obj 被调用的对象
@@ -40,11 +41,11 @@
      * @return
      */
     public static Object invoke(Object obj,Method method, Object... args){
-        try {
-           return method.invoke(obj,args);
-        } catch (Exception e) {
-            throw new IllegalStateException(e);
+    try {
+          return method.invoke(obj,args);
+        } catch (Exception e){
+           throw new IllegalStateException(e) ;
         }
     }
-}
+ }
   
