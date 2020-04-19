@@ -12,6 +12,10 @@ import lombok.Data;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 客户端配置
+ * 客户端的实际实现，序列化和反序列化，服务端的地址信息，以及服务端的选择器
+ */
 @Data
 public class RpcClientConfig {
     private Class<? extends TransportClient> transportClass = HTTPTransportClient.class;

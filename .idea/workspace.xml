@@ -1,105 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7c549e9-4986-4bfa-ad42-c25956238d7b" name="Default Changelist" comment="drpc project first commit.">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-client/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-client/src/main/java/com/drpc/client/RandomTransportSelector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-client/src/main/java/com/drpc/client/RemoteInvoker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-client/src/main/java/com/drpc/client/RpcClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-client/src/main/java/com/drpc/client/RpcClientConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-client/src/main/java/com/drpc/client/TransportSelector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-client/target/classes/com/drpc/client/RandomTransportSelector.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-client/target/classes/com/drpc/client/RemoteInvoker.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-client/target/classes/com/drpc/client/RpcClient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-client/target/classes/com/drpc/client/RpcClientConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-client/target/classes/com/drpc/client/TransportSelector.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/rpc-demo-codec.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/src/main/java/com/drpc/codec/Decoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/src/main/java/com/drpc/codec/Encoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/src/main/java/com/drpc/codec/JSONDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/src/main/java/com/drpc/codec/JSONEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/src/test/java/com/drpc/codec/JSONDecoderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/src/test/java/com/drpc/codec/JSONEncoderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/src/test/java/com/drpc/codec/TestBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/target/classes/com/drpc/codec/Decoder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/target/classes/com/drpc/codec/Encoder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/target/classes/com/drpc/codec/JSONDecoder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/target/classes/com/drpc/codec/JSONEncoder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/target/test-classes/com/drpc/codec/JSONDecoderTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/target/test-classes/com/drpc/codec/JSONEncoderTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-codec/target/test-classes/com/drpc/codec/TestBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-common/rpc-demo-common.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-common/src/main/java/com/drpc/common/utils/ReflectionUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-common/src/test/java/com/drpc/common/utils/ReflectionUtilsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-common/src/test/java/com/drpc/common/utils/TestClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-common/target/classes/com/drpc/common/utils/ReflectionUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-common/target/test-classes/com/drpc/common/utils/ReflectionUtilsTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-common/target/test-classes/com/drpc/common/utils/TestClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-proto/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-proto/src/main/java/com/drpc/Peer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-proto/src/main/java/com/drpc/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-proto/src/main/java/com/drpc/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-proto/src/main/java/com/drpc/ServiceDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-proto/target/classes/com/drpc/Peer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-proto/target/classes/com/drpc/Request.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-proto/target/classes/com/drpc/Response.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-proto/target/classes/com/drpc/ServiceDescriptor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/rpc-demo-server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/RpcServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/RpcServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/ServiceInstance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/ServiceInvoker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/ServiceManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/src/test/java/com/drpc/server/ServiceManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/src/test/java/com/drpc/server/TestClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/src/test/java/com/drpc/server/TestInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/target/classes/com/drpc/server/RpcServer$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/target/classes/com/drpc/server/RpcServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/target/classes/com/drpc/server/RpcServerConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/target/classes/com/drpc/server/ServiceInstance.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/target/classes/com/drpc/server/ServiceInvoker.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/target/classes/com/drpc/server/ServiceManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/target/test-classes/com/drpc/server/ServiceManagerTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/target/test-classes/com/drpc/server/TestClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-server/target/test-classes/com/drpc/server/TestInterface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-test/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-test/src/main/java/com/drpc/test/CalcService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-test/src/main/java/com/drpc/test/CalcServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-test/src/main/java/com/drpc/test/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-test/src/main/java/com/drpc/test/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-test/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-test/target/classes/com/drpc/test/CalcService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-test/target/classes/com/drpc/test/CalcServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-test/target/classes/com/drpc/test/Client.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-test/target/classes/com/drpc/test/Server.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-test/target/classes/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-transport/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-transport/rpc-demo-transport.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/HTTPTransportClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/HTTPTransportServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/RequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/TransportClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/TransportServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-transport/target/classes/com/drpc/transport/client/HTTPTransportClient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-transport/target/classes/com/drpc/transport/client/HTTPTransportServer$RequestServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-transport/target/classes/com/drpc/transport/client/HTTPTransportServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-transport/target/classes/com/drpc/transport/client/RequestHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-transport/target/classes/com/drpc/transport/client/TransportClient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo-transport/target/classes/com/drpc/transport/client/TransportServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rpc-demo.iml" afterDir="false" />
+    <list default="true" id="b7c549e9-4986-4bfa-ad42-c25956238d7b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-client/src/main/java/com/drpc/client/RandomTransportSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-client/src/main/java/com/drpc/client/RandomTransportSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-client/src/main/java/com/drpc/client/RemoteInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-client/src/main/java/com/drpc/client/RemoteInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-client/src/main/java/com/drpc/client/RpcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-client/src/main/java/com/drpc/client/RpcClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-client/src/main/java/com/drpc/client/RpcClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-client/src/main/java/com/drpc/client/RpcClientConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-codec/src/main/java/com/drpc/codec/JSONDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-codec/src/main/java/com/drpc/codec/JSONDecoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-codec/src/main/java/com/drpc/codec/JSONEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-codec/src/main/java/com/drpc/codec/JSONEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-common/src/main/java/com/drpc/common/utils/ReflectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-common/src/main/java/com/drpc/common/utils/ReflectionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-proto/src/main/java/com/drpc/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-proto/src/main/java/com/drpc/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-proto/src/main/java/com/drpc/ServiceDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-proto/src/main/java/com/drpc/ServiceDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/RpcServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/RpcServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/RpcServerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/RpcServerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/ServiceInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/ServiceInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/ServiceInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/ServiceInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/ServiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-server/src/main/java/com/drpc/server/ServiceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/HTTPTransportClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/HTTPTransportClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/HTTPTransportServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/HTTPTransportServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/RequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/TransportClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/TransportClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/TransportServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rpc-demo-transport/src/main/java/com/drpc/transport/client/TransportServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +93,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -295,8 +219,16 @@
       <workItem from="1587123843196" duration="5188000" />
       <workItem from="1587168198044" duration="7398000" />
       <workItem from="1587206469660" duration="2041000" />
-      <workItem from="1587253773756" duration="1950000" />
+      <workItem from="1587253773756" duration="20121000" />
     </task>
+    <task id="LOCAL-00001" summary="drpc project first commit.">
+      <created>1587257282813</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587257282814</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +239,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="drpc project first commit." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="329" y="91" key="#Notifications" timestamp="1587258101913">
+      <screen x="0" y="0" width="1473" height="864" />
+    </state>
+    <state x="329" y="91" key="#Notifications/0.0.1473.864@0.0.1473.864" timestamp="1587258101913" />
     <state x="0" y="285" key="#com.intellij.ide.util.MemberChooser" timestamp="1587172323300">
       <screen x="0" y="0" width="1473" height="864" />
     </state>
@@ -315,14 +251,18 @@
       <screen x="0" y="0" width="1473" height="864" />
     </state>
     <state x="498" y="291" width="538" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1473.864@0.0.1473.864" timestamp="1587112567354" />
-    <state x="317" y="25" key="CommitChangelistDialog2" timestamp="1587257154084">
+    <state x="317" y="25" key="CommitChangelistDialog2" timestamp="1587257273714">
       <screen x="0" y="0" width="1473" height="864" />
     </state>
-    <state x="317" y="25" key="CommitChangelistDialog2/0.0.1473.864@0.0.1473.864" timestamp="1587257154084" />
+    <state x="317" y="25" key="CommitChangelistDialog2/0.0.1473.864@0.0.1473.864" timestamp="1587257273714" />
     <state x="517" y="188" key="FileChooserDialogImpl" timestamp="1587256759036">
       <screen x="0" y="0" width="1473" height="864" />
     </state>
     <state x="517" y="188" key="FileChooserDialogImpl/0.0.1473.864@0.0.1473.864" timestamp="1587256759036" />
+    <state x="606" y="323" width="272" height="290" key="Github.ShareDialog" timestamp="1587257403998">
+      <screen x="0" y="0" width="1473" height="864" />
+    </state>
+    <state x="606" y="323" width="272" height="290" key="Github.ShareDialog/0.0.1473.864@0.0.1473.864" timestamp="1587257403998" />
     <state width="1430" height="377" key="GridCell.Tab.0.bottom" timestamp="1587208521388">
       <screen x="0" y="0" width="1473" height="864" />
     </state>
@@ -359,25 +299,33 @@
       <screen x="0" y="0" width="1473" height="864" />
     </state>
     <state x="65" y="104" key="SettingsEditor/0.0.1473.864@0.0.1473.864" timestamp="1587256666642" />
+    <state x="329" y="166" key="Vcs.Push.Dialog.v2" timestamp="1587289452152">
+      <screen x="0" y="0" width="1473" height="864" />
+    </state>
+    <state x="329" y="166" key="Vcs.Push.Dialog.v2/0.0.1473.864@0.0.1473.864" timestamp="1587289452152" />
     <state x="381" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1587254380175">
       <screen x="0" y="0" width="1473" height="864" />
     </state>
     <state x="381" y="357" key="com.intellij.ide.util.TipDialog/0.0.1473.864@0.0.1473.864" timestamp="1587254380175" />
+    <state x="524" y="224" key="git4idea.merge.GitPullDialog" timestamp="1587289437504">
+      <screen x="0" y="0" width="1473" height="864" />
+    </state>
+    <state x="524" y="224" key="git4idea.merge.GitPullDialog/0.0.1473.864@0.0.1473.864" timestamp="1587289437504" />
     <state x="293" y="260" width="1180" height="604" key="new project wizard" timestamp="1587172118287">
       <screen x="0" y="0" width="1473" height="864" />
     </state>
     <state x="293" y="260" width="1180" height="604" key="new project wizard/0.0.1473.864@0.0.1473.864" timestamp="1587172118287" />
-    <state x="568" y="186" width="672" height="678" key="search.everywhere.popup" timestamp="1587168986367">
+    <state x="568" y="186" width="672" height="678" key="search.everywhere.popup" timestamp="1587285439953">
       <screen x="0" y="0" width="1473" height="864" />
     </state>
-    <state x="568" y="186" width="672" height="678" key="search.everywhere.popup/0.0.1473.864@0.0.1473.864" timestamp="1587168986367" />
+    <state x="568" y="186" width="672" height="678" key="search.everywhere.popup/0.0.1473.864@0.0.1473.864" timestamp="1587285439953" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/rpc-demo-client/src/main/java/com/drpc/client/RandomTransportSelector.java</url>
-          <line>44</line>
+          <line>67</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

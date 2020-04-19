@@ -17,6 +17,7 @@ import java.io.OutputStream;
 public class HTTPTransportServer implements TransportServer {
     private RequestHandler handler;
     private Server server;
+    //创建一个ServletContextServer类，用来初始化web应用程序的Context，并且指定Servlet和Servlet匹配的url。
     @Override
     public void init(int port, RequestHandler handler) {
         this.handler = handler;
@@ -25,6 +26,7 @@ public class HTTPTransportServer implements TransportServer {
         ServletContextHandler ctx = new ServletContextHandler();
         server.setHandler(ctx);
         ServletHolder holder = new ServletHolder(new RequestServlet());
+        //http://localhost:3000/*
         ctx.addServlet(holder,"/*");
     }
 
@@ -48,9 +50,10 @@ public class HTTPTransportServer implements TransportServer {
     }
 
     class RequestServlet extends HttpServlet{
+        // 处理客户端的post请求
         @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            //super.doPost(req, resp);
+           //super.doPost(req, resp);
            InputStream in =  req.getInputStream();
            OutputStream out = resp.getOutputStream();
            if(handler!=null){

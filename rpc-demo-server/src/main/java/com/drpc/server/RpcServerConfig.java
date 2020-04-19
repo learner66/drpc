@@ -9,7 +9,8 @@ import com.drpc.transport.client.TransportServer;
 import lombok.Data;
 
 /**
- * server配置
+ * server配置，服务器配置
+ * 序列化和反序列化配置，以及端口配置
  */
 
 @Data

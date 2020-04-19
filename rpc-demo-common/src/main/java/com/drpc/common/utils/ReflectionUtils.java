@@ -1,6 +1,5 @@
 package com.drpc.common.utils;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
@@ -15,6 +14,7 @@ public  class ReflectionUtils {
      */
     public static <T> T newInstance(Class<T> clazz){
         try {
+            //利用newInstance来创建新对象
             return clazz.newInstance();
         } catch (Exception e) {
            throw new IllegalStateException(e);
@@ -22,9 +22,12 @@ public  class ReflectionUtils {
     }
 
     public static Method[] getPublicMethods(Class clazz){
+        //getDeclaredMethods可以获取所有的方法，包含私有的方法
         Method[] methods = clazz.getDeclaredMethods();
+        //pmethods只存储私有的方法
         List<Method> pmethods = new ArrayList<>();
         for(Method m : methods){
+            //选择所有的公有方法
             if(Modifier.isPublic(m.getModifiers())){
                 pmethods.add(m);
             }
@@ -41,6 +44,7 @@ public  class ReflectionUtils {
      */
     public static Object invoke(Object obj,Method method, Object... args){
         try {
+           //调用指定对象的指定方法
            return method.invoke(obj,args);
         } catch (Exception e) {
             throw new IllegalStateException(e);

@@ -15,8 +15,6 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
-import static sun.misc.IOUtils.*;
-
 /**
  * 调用远程服务的代理类
  */
@@ -31,8 +29,16 @@ public class RemoteInvoker implements InvocationHandler {
         this.encoder = encoder;
         this.decoder = decoder;
         this.selector = selector;
-
     }
+
+    /**
+     * 执行远程服务
+     * @param proxy 代理
+     * @param method 方法
+     * @param args  参数
+     * @return 返回远程服务的执行结果
+     * @throws Throwable
+     */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Request request = new Request();
@@ -45,15 +51,24 @@ public class RemoteInvoker implements InvocationHandler {
         return resp.getData();
     }
 
+    /**
+     * 调用服务
+     * @param request 请求
+     * @return 处理结果
+     */
     private Response invokeRemote(Request request) {
         Response resp = null;
         TransportClient client = null;
         try{
+            // 随机选择一个连接来处理该请求
             client = selector.select();
+            // 将请求进行序列化
             byte[] outBytes = encoder.encode(request);
+            // 请求写入到连接中
             InputStream receive = client.write(new ByteArrayInputStream(outBytes));
             byte[] inBytes = IOUtils.readFully(receive,
                     receive.available());
+            // 将接受到的数据进行反序列化
             resp = decoder.decode(inBytes,Response.class);
 
         } catch (IOException e) {

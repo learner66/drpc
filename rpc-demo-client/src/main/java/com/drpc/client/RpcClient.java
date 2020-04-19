@@ -6,6 +6,9 @@ import com.drpc.common.utils.ReflectionUtils;
 
 import java.lang.reflect.Proxy;
 
+/**
+ * RPC的客户端
+ */
 public class RpcClient {
     private RpcClientConfig config;
     private Encoder encoder;
@@ -27,7 +30,7 @@ public class RpcClient {
         );
     }
 
-
+    // 获得一个代理对象
     public <T> T getProxy(Class<T> clazz){
         return (T)Proxy.newProxyInstance(this.getClass().getClassLoader(),
                 new Class[]{clazz},

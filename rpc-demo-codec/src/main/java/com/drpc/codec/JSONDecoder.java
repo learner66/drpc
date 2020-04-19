@@ -8,6 +8,7 @@ import com.alibaba.fastjson.JSON;
 public class JSONDecoder implements Decoder {
     @Override
     public <T> T decode(byte[] bytes, Class<T> clazz) {
+        // 将二进制数据转化为指定类型的对象
         return JSON.parseObject(bytes,clazz);
     }
 }
