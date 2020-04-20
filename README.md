@@ -158,9 +158,122 @@
 
     server.register(CalcService.class,new CalcServiceImpl());
     server.start();
-**2**. server.register是将CalcService注册到server中
+**2**. server.register是将CalcService注册到server中,内容是由serviceManager来执行。
 
     //服务注册
      public <T> void register(Class<T> interfaceClass,T bean){
          serviceManager.register(interfaceClass,bean);
      }
+**3**. serviceManager.register来具体执行注册服务的操作。
+
+     public <T> void register(Class<T> interfaceClass,T bean){
+           //得到服务所在类的所有公有方法
+           Method[] methods =  ReflectionUtils.getPublicMethods(interfaceClass);
+           for(Method method:methods){
+               //将服务实例化， 类+方法
+               ServiceInstance sis = new ServiceInstance(bean,method);
+               //生成一个服务描述
+               ServiceDescriptor sdp = ServiceDescriptor.from(interfaceClass,method);
+               //将服务描述和服务实例放入到map中，即是完成注册
+               services.put(sdp,sis);
+               log.info("register service:{} {}",sdp.getClazz(),sdp.getMethod());
+           }
+     }
+     
+     首先得到CalcService中的所有公有方法(add,minus),然后为每个服务生成的一个ServiceInstance，
+     随即将ServiceInstance和ServiceDescriptor放入map中。
+     ServiceDescriptor是描述服务的，包括服务所在的类，方法名，方法的返回类型，方法的参数类型。
+     ServiceInstance是方法实例，ServiceInstance中包含所在的类和方法。
+     最后就是启动服务，监听端口3000.
+
+**4**. server的启动过程：
+
+    public RpcServer() {
+        this(new RpcServerConfig());
+    }
+    
+    public RpcServer(RpcServerConfig config){
+        this.config = config;
+        this.net = ReflectionUtils.newInstance(config.getTransportClass());
+        this.net.init(config.getPort(),this.handler);
+        this.encoder = ReflectionUtils.newInstance(config.getEncoderClass());
+        this.decoder = ReflectionUtils.newInstance(config.getDecoderClass());
+        this.serviceManager = new ServiceManager();
+        this.serviceInvoker = new ServiceInvoker();
+    }
+    
+     public void init(int port, RequestHandler handler) {
+        this.handler = handler;
+        this.server = new Server(port);
+        //servlet 接收请求
+        ServletContextHandler ctx = new ServletContextHandler();
+        server.setHandler(ctx);
+        ServletHolder holder = new ServletHolder(new RequestServlet());
+        //http://localhost:3000/*
+        ctx.addServlet(holder,"/*");
+    }
+    
+    public void start(){
+        this.net.start();
+    }
+**5**. 在server启动后，就可以监听3000端口了，请求到达该端口后会被doPost方法来进行处理。
+    
+     class RequestServlet extends HttpServlet{
+        // 处理客户端的post请求
+        @Override
+        protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+           //super.doPost(req, resp);
+           InputStream in =  req.getInputStream();
+           OutputStream out = resp.getOutputStream();
+           if(handler!=null){
+               handler.onRequest(in,out);
+           }
+           out.flush();
+        }
+     }
+     此时，handler.onRequest函数来处理输入和输出
+     
+    private RequestHandler handler = new RequestHandler(){
+        @Override
+        public void onRequest(InputStream receive, OutputStream toResp) {
+         Response resp = new Response();
+         try {
+             // 从InputStream中读取数据
+             byte[] inBytes = IOUtils.readFully(receive, receive.available());
+        
+             // 将读取的二进制数据转为Request对象
+             Request request = decoder.decode(inBytes, Request.class);
+             log.info("get request:{}",request);
+             //寻找服务
+             ServiceInstance sis = serviceManager.lookup(request);
+             //调用服务，返回结果
+             Object ret = serviceInvoker.invoke(sis,request);
+             // 返回结果
+             resp.setData(ret);
+         } catch (Exception e) {
+            log.warn(e.getMessage(),e);
+            resp.setCode(1);
+            resp.setMessage("RpcServer get error: "+e.getClass().getName()+ " : " +e.getMessage());
+         }finally {
+             try {
+                 //将resp序列化
+                 byte[] outBytes = encoder.encode(resp);
+                 //写入到输出字符流
+                 toResp.write(outBytes);
+                 log.info("response client");
+             } catch (IOException e) {
+                 log.warn(e.getMessage(),e);
+             }
+         }
+        }
+    };
+    onRequest将用来处理request请求，首先将request中读取的二进制流反序列化为对象，然后通过request得到对应的服务实例
+    服务实例ServiceInstance.invoke再去执行实际的方法。
+
+**6**. serviceInstance.invoke()
+
+    public Object invoke(ServiceInstance service, Request request){
+        return ReflectionUtils.invoke(service.getTarget(),service.getMethod(),request.getParameters());
+    }
+    还是利用反射调用方法，进行执行。
+    
